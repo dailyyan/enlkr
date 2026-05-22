@@ -24,6 +24,7 @@ html, body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
   font-feature-settings: "ss01", "cv11";
@@ -48,11 +49,12 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0.14em;
   text-transform: uppercase;
   flex-wrap: wrap;
+  min-width: 0;
 }
 .a-mast .a-issue { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
 .a-mast .a-brand { display: inline-flex; align-items: center; gap: 10px; }
 .a-mast .a-mast-logo { width: 22px; height: 22px; }
-.a-mast .a-nav { display: flex; gap: 18px; flex-wrap: wrap; }
+.a-mast .a-nav { display: flex; gap: 18px; flex-wrap: wrap; min-width: 0; }
 .a-mast .a-nav a { transition: color .12s; }
 .a-mast .a-nav a:hover { color: var(--enl); }
 .a-mast .a-nav a.active { color: var(--enl); }
@@ -183,6 +185,7 @@ img { display: block; max-width: 100%; }
   border-bottom: 1px dashed var(--rule);
   align-items: baseline;
   gap: 16px;
+  min-width: 0;
 }
 .a-row:last-child { border-bottom: 0; }
 .a-row dt {
@@ -196,6 +199,8 @@ img { display: block; max-width: 100%; }
   font-size: clamp(16px, 1.5vw, 19px);
   font-weight: 600;
   letter-spacing: -0.005em;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .a-row dd .accent { color: var(--enl); }
 
@@ -209,6 +214,7 @@ img { display: block; max-width: 100%; }
   justify-content: space-between;
   gap: 24px;
   flex-wrap: wrap;
+  min-width: 0;
 }
 .a-section-title h2 {
   font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -0.02em;
@@ -218,6 +224,8 @@ img { display: block; max-width: 100%; }
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 /* Role cards */
@@ -235,6 +243,7 @@ img { display: block; max-width: 100%; }
   display: flex;
   flex-direction: column;
   min-height: 280px;
+  min-width: 0;
 }
 .a-role .a-rolenum {
   font-family: var(--mono);
@@ -249,23 +258,27 @@ img { display: block; max-width: 100%; }
   line-height: 1.15;
 }
 .a-role p {
-  font-size: 14px; line-height: 1.55; color: rgba(14,14,14,0.7);
+  font-size: 16px; line-height: 1.62; color: rgba(14,14,14,0.72);
   margin-top: auto;
+  overflow-wrap: anywhere;
 }
 
 /* Reception and FAQ */
 .a-info {
   margin: 32px var(--side) 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
   background: var(--rule);
   border: 1px solid var(--rule);
 }
 .a-info article {
   background: var(--paper-2);
-  padding: 28px 24px 30px;
-  min-height: 240px;
+  padding: 32px 28px 34px;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 .a-info .a-rolenum {
   font-family: var(--mono);
@@ -276,17 +289,18 @@ img { display: block; max-width: 100%; }
   text-transform: uppercase;
 }
 .a-info h3 {
-  font-size: clamp(21px, 2vw, 28px);
+  font-size: clamp(24px, 2.2vw, 32px);
   font-weight: 850;
   letter-spacing: -0.015em;
   line-height: 1.15;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 .a-info p,
 .a-faq p {
-  font-size: 15px;
-  line-height: 1.65;
+  font-size: 17px;
+  line-height: 1.68;
   color: rgba(14,14,14,0.72);
+  overflow-wrap: anywhere;
 }
 .a-faq {
   margin: 24px var(--side) 0;
@@ -304,10 +318,13 @@ img { display: block; max-width: 100%; }
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  font-size: clamp(18px, 2vw, 24px);
+  font-size: clamp(20px, 2.15vw, 28px);
   font-weight: 800;
   letter-spacing: -0.01em;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
+.a-faq summary::marker { content: ""; }
 .a-faq summary::-webkit-details-marker { display: none; }
 .a-faq summary::after {
   content: "+";
@@ -376,6 +393,8 @@ img { display: block; max-width: 100%; }
   color: rgba(14,14,14,0.55);
   gap: 16px;
   flex-wrap: wrap;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .a-foot .nav { display: flex; gap: 18px; flex-wrap: wrap; }
 .a-foot .nav a { transition: color .12s; }
@@ -393,8 +412,14 @@ img { display: block; max-width: 100%; }
 @media (max-width: 560px) {
   .a-roles { grid-template-columns: 1fr; }
   .a-row { grid-template-columns: 100px 1fr; }
+  .a-row dd { font-size: 16px; }
+  .a-section-title { align-items: flex-start; }
+  .a-section-title .kicker { width: 100%; }
   .cd-cta { margin-left: 0; width: 100%; }
   .cd-cta .a-btn { width: 100%; justify-content: space-between; }
+  .a-info article { min-height: 0; padding: 28px 22px 30px; }
+  .a-info p,
+  .a-faq p { font-size: 16px; }
   .a-faq summary { align-items: flex-start; }
   .a-faq p { padding-right: 0; }
 }
