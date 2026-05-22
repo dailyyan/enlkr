@@ -378,7 +378,17 @@ html[lang="ja"] a {
   flex-direction: column;
   gap: 12px;
 }
+.a-food-grid article { padding-top: 0; }
 .a-link-grid article.wide { background: var(--paper-2); }
+.a-food-img {
+  width: calc(100% + 44px);
+  max-width: none;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  margin: 0 -22px 12px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper-2);
+}
 .a-link-grid .a-rolenum,
 .a-food-grid .a-rolenum {
   font-family: var(--mono);
@@ -421,6 +431,15 @@ html[lang="ja"] a {
   gap: 12px;
   flex-wrap: wrap;
 }
+.a-photo-credit {
+  margin: 12px var(--side) 0;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(14,14,14,0.55);
+}
+.a-photo-credit a { border-bottom: 1px solid rgba(14,14,14,0.35); }
 
 /* CTA */
 .a-cta {
@@ -577,6 +596,11 @@ html[lang="ja"] a {
   .a-info article {
     padding-left: 18px;
     padding-right: 18px;
+  }
+  .a-food-img {
+    width: calc(100% + 36px);
+    margin-left: -18px;
+    margin-right: -18px;
   }
   .a-info p,
   .a-faq p { font-size: 16px; }
