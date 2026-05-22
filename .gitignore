@@ -1,0 +1,16 @@
+# Sidecars for the design canvas / image-slot tools (local-only)
+.image-slots.state.json
+.design-canvas.state.json
+
+# Source materials that don't need to live in the repo
+scraps/
+uploads/
+
+# Bundled output (huge, regeneratable)
+*\(standalone\).html
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
