@@ -370,7 +370,8 @@ html[lang="zh-Hans"] a {
 
 /* Link-heavy Japanese guide sections */
 .a-link-grid,
-.a-food-grid {
+.a-food-grid,
+.a-spot-grid {
   margin: 32px var(--side) 0;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -378,9 +379,11 @@ html[lang="zh-Hans"] a {
   background: var(--rule);
   border: 1px solid var(--rule);
 }
-.a-food-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.a-food-grid,
+.a-spot-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .a-link-grid article,
-.a-food-grid article {
+.a-food-grid article,
+.a-spot-grid article {
   background: var(--paper);
   padding: 26px 22px 28px;
   min-width: 0;
@@ -388,9 +391,11 @@ html[lang="zh-Hans"] a {
   flex-direction: column;
   gap: 12px;
 }
-.a-food-grid article { padding-top: 0; }
+.a-food-grid article,
+.a-spot-grid article { padding-top: 0; }
 .a-link-grid article.wide { background: var(--paper-2); }
-.a-food-img {
+.a-food-img,
+.a-spot-img {
   width: calc(100% + 44px);
   max-width: none;
   aspect-ratio: 16 / 10;
@@ -400,7 +405,8 @@ html[lang="zh-Hans"] a {
   background: var(--paper-2);
 }
 .a-link-grid .a-rolenum,
-.a-food-grid .a-rolenum {
+.a-food-grid .a-rolenum,
+.a-spot-grid .a-rolenum {
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.18em;
@@ -408,21 +414,24 @@ html[lang="zh-Hans"] a {
   text-transform: uppercase;
 }
 .a-link-grid h3,
-.a-food-grid h3 {
+.a-food-grid h3,
+.a-spot-grid h3 {
   font-size: clamp(21px, 2vw, 28px);
   font-weight: 850;
   letter-spacing: -0.01em;
   line-height: 1.15;
 }
 .a-link-grid p,
-.a-food-grid p {
+.a-food-grid p,
+.a-spot-grid p {
   font-size: 16px;
   line-height: 1.65;
   color: rgba(14,14,14,0.72);
   overflow-wrap: anywhere;
 }
 .a-link-grid a,
-.a-food-grid a {
+.a-food-grid a,
+.a-spot-grid a {
   margin-top: auto;
   display: inline-flex;
   width: fit-content;
@@ -434,7 +443,8 @@ html[lang="zh-Hans"] a {
   line-height: 1.4;
 }
 .a-link-grid a:hover,
-.a-food-grid a:hover { color: var(--enl); border-color: var(--enl); }
+.a-food-grid a:hover,
+.a-spot-grid a:hover { color: var(--enl); border-color: var(--enl); }
 .a-link-row {
   margin-top: auto;
   display: flex;
@@ -515,7 +525,8 @@ html[lang="zh-Hans"] a {
   .a-roles { grid-template-columns: 1fr 1fr; }
   .a-info { grid-template-columns: 1fr; }
   .a-link-grid,
-  .a-food-grid { grid-template-columns: 1fr 1fr; }
+  .a-food-grid,
+  .a-spot-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 560px) {
   :root { --side: 28px; }
@@ -530,6 +541,7 @@ html[lang="zh-Hans"] a {
   .a-info,
   .a-link-grid,
   .a-food-grid,
+  .a-spot-grid,
   .a-cta,
   .a-foot {
     max-width: 100%;
@@ -570,11 +582,13 @@ html[lang="zh-Hans"] a {
   .cd-cell .cd-unit { font-size: 9px; letter-spacing: 0.12em; }
   .a-roles { grid-template-columns: 1fr; }
   .a-link-grid,
-  .a-food-grid { grid-template-columns: 1fr; }
+  .a-food-grid,
+  .a-spot-grid { grid-template-columns: 1fr; }
   .a-roles,
   .a-info,
   .a-link-grid,
-  .a-food-grid {
+  .a-food-grid,
+  .a-spot-grid {
     width: calc(100% - (var(--side) * 2));
   }
   .a-section-title,
@@ -603,11 +617,13 @@ html[lang="zh-Hans"] a {
   .a-role,
   .a-link-grid article,
   .a-food-grid article,
+  .a-spot-grid article,
   .a-info article {
     padding-left: 18px;
     padding-right: 18px;
   }
-  .a-food-img {
+  .a-food-img,
+  .a-spot-img {
     width: calc(100% + 36px);
     margin-left: -18px;
     margin-right: -18px;
