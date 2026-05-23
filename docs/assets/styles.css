@@ -45,6 +45,16 @@ html[lang="ja"] a {
   line-break: anywhere;
   word-break: break-all;
 }
+html[lang="zh-Hans"] h1,
+html[lang="zh-Hans"] h2,
+html[lang="zh-Hans"] h3,
+html[lang="zh-Hans"] p,
+html[lang="zh-Hans"] dd,
+html[lang="zh-Hans"] summary,
+html[lang="zh-Hans"] a {
+  line-break: anywhere;
+  word-break: break-all;
+}
 
 /* Masthead */
 .a-mast {
